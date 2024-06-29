@@ -4,9 +4,10 @@ pragma solidity ^0.8.19;
 
 import {Script, console} from "forge-std/Script.sol";
 import {DevOpsTools} from "foundry-devops/src/DevOpsTools.sol";
+import {ZkSyncChainChecker} from "foundry-devops/src/ZkSyncChainChecker.sol";
 import {FundMe} from "../src/FundMe.sol";
 
-contract FundTheFundMeConract is Script {
+contract FundTheFundMeConract is ZkSyncChainChecker, Script {
     uint256 constant SEND_VALUE = 0.01 ether;
 
     function fundTheFundMeContract(address mostRecentDeployed) public {
